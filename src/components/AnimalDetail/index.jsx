@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import animals from "../../data/animals";
-import styles from './AnimalDetail.module.css'; 
+import styles from './animalDetail.module.css'; 
 
 function AnimalDetail() {
   const { id } = useParams();
