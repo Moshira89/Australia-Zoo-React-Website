@@ -1,18 +1,15 @@
-import React, { useState } from 'react'
-import animals from '../../data/animals'
-import styles from './mammals.module.css'
+import React, { useState } from 'react';
+import animals from '../../data/animals';
+import styles from './mammals.module.css';
 
 function Mammals() {
   const [activeAnimal, setActiveAnimal] = useState(null);
-
-  const mammals = animals.filter(animal => animal.group === 'Mammal');
+  const mammals = animals.filter((animal) => animal.group === 'Mammal');
 
   const handleAnimalClick = (animal) => {
-    if (activeAnimal && activeAnimal.id === animal.id) {
-      setActiveAnimal(null); 
-    } else {
-      setActiveAnimal(animal); 
-    }
+    setActiveAnimal((prev) =>
+      prev && prev.id === animal.id ? null : animal
+    );
   };
 
   return (
@@ -20,7 +17,7 @@ function Mammals() {
       <aside className={styles.sidebar}>
         <h3>Mammals</h3>
         <ul>
-          {mammals.map(animal => (
+          {mammals.map((animal) => (
             <li key={animal.id} onClick={() => handleAnimalClick(animal)}>
               {animal.name}
             </li>
@@ -32,18 +29,21 @@ function Mammals() {
         <p>Here you'll find information about Australian mammals.</p>
 
         {activeAnimal && (
-          <>
+          <div className={styles.detail}>
             <h3>{activeAnimal.name}</h3>
-            <img src={`images/${activeAnimal.image}`} alt={activeAnimal.name} />
+            <img
+              src={activeAnimal.image}
+              alt={activeAnimal.name}
+              className={styles.image}
+            />
             <p>{activeAnimal.description}</p>
-            <p>Diet: {activeAnimal.diet}</p>
-            <p>Group: {activeAnimal.group}</p>
-            <p>Habitat: {activeAnimal.habitat}</p>
-          </>
+            <p><strong>Diet:</strong> {activeAnimal.diet}</p>
+            <p><strong>Group:</strong> {activeAnimal.group}</p>
+          </div>
         )}
       </main>
     </div>
   );
 }
 
-export default Mammals
+export default Mammals;

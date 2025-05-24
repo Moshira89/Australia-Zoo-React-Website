@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import animals from '../../data/animals'
-import styles from './reptiles.module.css'
+import React, { useState } from 'react';
+import animals from '../../data/animals';
+import styles from './reptiles.module.css';
 
 function Reptiles() {
   const [activeAnimal, setActiveAnimal] = useState(null);
@@ -8,11 +8,9 @@ function Reptiles() {
   const reptiles = animals.filter(animal => animal.group === 'Reptile');
 
   const handleAnimalClick = (animal) => {
-    if (activeAnimal && activeAnimal.id === animal.id) {
-      setActiveAnimal(null);
-    } else {
-      setActiveAnimal(animal); 
-    }
+    setActiveAnimal(prev =>
+      prev && prev.id === animal.id ? null : animal
+    );
   };
 
   return (
@@ -32,18 +30,21 @@ function Reptiles() {
         <p>Here you'll find information about Australian reptiles.</p>
 
         {activeAnimal && (
-          <>
+          <div className={styles.detail}>
             <h3>{activeAnimal.name}</h3>
-            <img src={`images/${activeAnimal.image}`} alt={activeAnimal.name} />
+            <img
+              src={activeAnimal.image}
+              alt={activeAnimal.name}
+              className={styles.image}
+            />
             <p>{activeAnimal.description}</p>
-            <p>Diet: {activeAnimal.diet}</p>
-            <p>Group: {activeAnimal.group}</p>
-            <p>Habitat: {activeAnimal.habitat}</p>
-          </>
+            <p><strong>Diet:</strong> {activeAnimal.diet}</p>
+            <p><strong>Group:</strong> {activeAnimal.group}</p>
+          </div>
         )}
       </main>
     </div>
   );
 }
 
-export default Reptiles
+export default Reptiles;

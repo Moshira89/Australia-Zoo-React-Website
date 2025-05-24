@@ -1,18 +1,15 @@
-import { Link, useLocation } from "react-router-dom"
-import styles from "./header.module.css"
-import homeLogo from "../../assets/logo-zoo.png"
-import birdsLogo from "../../assets/birds-logo.jpeg"
-import mammalsLogo from "../../assets/mammals-logo.jpg"
-import reptilesLogo from "../../assets/reptiles-logo.jpeg"
+import { Link, useLocation } from "react-router-dom";
+import styles from "./header.module.css";
+import { getImageUrl } from "../../utils/getImageUrl";
 
 function Header() {
   const location = useLocation();
 
   const getLogo = () => {
-    if (location.pathname.includes("birds")) return birdsLogo;
-    if (location.pathname.includes("mammals")) return mammalsLogo;
-    if (location.pathname.includes("reptiles")) return reptilesLogo;
-    return homeLogo;
+    if (location.pathname.includes("birds")) return getImageUrl("birds-logo.jpeg");
+    if (location.pathname.includes("mammals")) return getImageUrl("mammals-logo.jpg");
+    if (location.pathname.includes("reptiles")) return getImageUrl("reptiles-logo.jpeg");
+    return getImageUrl("logo-zoo.png");
   };
 
   const getTitle = () => {
@@ -25,7 +22,7 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.headerContent}>
-        <img src={getLogo()} alt="Logo" className={styles.logo} />
+        <img src={getLogo() || null} alt="Logo" className={styles.logo} />
         <h1 className={styles.title}>{getTitle()}</h1>
       </div>
       <nav className={styles.nav}>
@@ -38,4 +35,4 @@ function Header() {
   );
 }
 
-export default Header
+export default Header;

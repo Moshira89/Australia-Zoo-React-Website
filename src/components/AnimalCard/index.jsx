@@ -1,13 +1,11 @@
-import React from 'react'
-import styles from './animalCard.module.css'
+import React from 'react';
+import styles from './animalCard.module.css';
 
 function AnimalCard({ animal }) {
-  const imageSrc = new URL(`../../assets/${animal.image}`, import.meta.url).href;
-
   return (
-    <div className="card">
+    <div className={styles.card}>
       <img
-        src={imageSrc}
+        src={animal.image}
         alt={animal.name}
         className={styles.cardImage}
       />
@@ -17,4 +15,4 @@ function AnimalCard({ animal }) {
   );
 }
 
-export default AnimalCard
+export default AnimalCard;

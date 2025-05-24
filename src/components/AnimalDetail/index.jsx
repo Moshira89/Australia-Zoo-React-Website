@@ -1,27 +1,28 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
-import animals from '../../data/animals'
-import styles from './animalDetail.module.css'
+import { useParams, useNavigate } from "react-router-dom";
+import animals from "../../data/animals";
+import styles from './AnimalDetail.module.css'; 
 
 function AnimalDetail() {
   const { id } = useParams();
-  const animal = animals.find(a => a.id === parseInt(id)); 
+  const navigate = useNavigate();
+  const animal = animals.find(animal => animal.id === parseInt(id));
 
   if (!animal) {
-    return <div>Animal not found!</div>;
+    return <div>Animal not found</div>;
   }
 
   return (
-    <div className={styles.detailPage}>
-      <h1>{animal.name}</h1>
-      <img src={`images/${animal.image}`} alt={animal.name} />
-      <p>{animal.description}</p>
-      <p>Diet: {animal.diet}</p>
-      <p>Group: {animal.group}</p>
-      <p>Habitat: {animal.habitat}</p>
-      <button onClick={() => window.history.back()}>Close</button> 
+    <div className={styles.detailOverlay}>
+      <div className={styles.detailCard}>
+        <img src={animal.image} alt={animal.name} className={styles.image} />
+        <h2>{animal.name}</h2>
+        <p><strong>Group:</strong> {animal.group}</p>
+        <p><strong>Diet:</strong> {animal.diet}</p>
+        <p><strong>Description:</strong> {animal.description}</p>
+        <button onClick={() => navigate(-1)} className={styles.closeBtn}>Close</button>
+      </div>
     </div>
   );
 }
 
-export default AnimalDetail
+export default AnimalDetail;
