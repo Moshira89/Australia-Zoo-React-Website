@@ -1,78 +1,123 @@
-import { getImageUrl } from '../utils/getImageUrl';
-
 const animals = [
   {
-    id: 1,
-    name: 'Kangaroo',
-    group: 'Mammal',
-    image: getImageUrl('kangaroo.jpeg'),
-    description: 'The Kangaroo is a marsupial native to Australia. It is known for its large hind legs and ability to leap great distances. Kangaroos are social animals and often found in mobs.',
-    diet: 'Herbivore'
+    name: "Echidna",
+    id: "echidna",
+    group: "mammals",
+    lifespan: "50 years",
+    food: "Insects such as ants, termites, beetle larvae, and worms",
+    description: "Echidnas, also called spiny anteaters, are walking contradictions. They lay eggs like a reptile, but are warm-blooded and feed their young with milk like a mammal...",
+    length: "76 cm",
+    weight: "10 kg",
+    found: "Throughout Australia",
+    image: "echidna.jpg",
+    habitat: "Woodlands and scrublands"
   },
   {
-    id: 2,
-    name: 'Koala',
-    group: 'Mammal',
-    image: getImageUrl('koala.jpeg'),
-    description: 'Koalas are marsupials found in coastal areas of Australia. They feed mainly on eucalyptus leaves and spend most of their time sleeping in trees.',
-    diet: 'Herbivore'
+    name: "TasmanianDevil",
+    id: "tasmanian-devil",
+    group: "mammals",
+    lifespan: "5 years",
+    food: "Meat from animals such as wallabies and wombats",
+    description: "The Tasmanian devil is a carnivorous marsupial native to Tasmania. Known for its ferocious feeding behavior, it's the largest surviving carnivorous marsupial...",
+    length: "70 cm",
+    weight: "10 kg",
+    found: "Tasmania",
+    image: "TasmanianDevil.jpg", 
+    habitat: "Woodlands and scrublands"
   },
   {
-    id: 3,
-    name: 'Dingo',
-    group: 'Mammal',
-    image: getImageUrl('dingo.jpg'),
-    description: 'The dingo is a type of wild dog found in Australia. Dingoes are known for their adaptability, intelligence, and complex social behavior.',
-    diet: 'Carnivore'
+    name: "Quokka",
+    id: "quokka",
+    group: "mammals",
+    lifespan: "10 years",
+    food: "Shrubs and grasses",
+    description: "The Quokka looks very much like other wallabies but is smaller and has a rounder face. Known as the world's happiest animal thanks to its smile-like expression...",
+    length: "50 cm",
+    weight: "3 kg",
+    found: "Rottnest Island and Western Australia",
+    image: "quokka.jpg",
+    habitat: "Woodlands and scrublands"
+  },
+
+  {
+    name: "Frill-necked Lizard",
+    id: "frill-necked-lizard",
+    group: "reptiles",
+    lifespan: "20 years",
+    food: "Small insects and spiders",
+    description: "When threatened, the frill-necked lizard unfurls the colorful frill around its head and opens its mouth to appear larger and scarier to predators...",
+    length: "90 cm",
+    weight: "1 kg",
+    found: "Northern Australia",
+    image: "frill-neckedLizard.jpg",
+    habitat: "Woodlands and scrublands"
   },
   {
-    id: 4,
-    name: 'Emu',
-    group: 'Bird',
-    image: getImageUrl('emu.jpg'),
-    description: 'The emu is the second-largest bird in the world. It is flightless and native to Australia. Emus can run at high speeds and have strong legs.',
-    diet: 'Omnivore'
+    name: "Hawksbill Turtle",
+    id: "hawksbill-turtle",
+    group: "reptiles",
+    lifespan: "50 years",
+    food: "Sponges, jellyfish, and sea plants",
+    description: "The Hawksbill Sea Turtle gets its name from its distinctive beak-like mouth. It plays a vital role in maintaining the health of coral reefs...",
+    length: "80 cm",
+    weight: "50 kg",
+    found: "Tropical coasts of QLD, NT, and WA",
+    image: "hawksbill-turtle.jpg", 
+    habitat: "Coastal reefs and shorelines"
   },
   {
-    id: 5,
-    name: 'Cockatoo',
-    group: 'Bird',
-    image: getImageUrl('Cockatoo.jpg'),
-    description: 'Cockatoos are highly intelligent parrots known for their loud calls and expressive crests. They form strong bonds with humans and other birds.',
-    diet: 'Omnivore'
+    name: "Perentie",
+    id: "Perentie",
+    group: "reptiles",
+    lifespan: "20 years",
+    food: "Carnivore (eats kangaroos, rabbits, birds)",
+    description: "The perentie is the largest monitor lizard native to Australia. It is highly intelligent and known for being elusive and fast-moving...",
+    length: "2.5 m",
+    weight: "20 kg",
+    found: "Australian deserts",
+    image: "Perentie.jpg", 
+    habitat: "Desert and arid scrublands"
+  },
+
+  {
+    name: "Cassowary",
+    id: "cassowary",
+    group: "birds",
+    lifespan: "20 years",
+    food: "Fruit, insects, and small animals",
+    description: "Cassowaries are large, flightless birds with powerful legs and a horn-like casque on their heads. They're important seed dispersers in the rainforest...",
+    length: "1.7 m",
+    weight: "44 kg",
+    found: "Queensland",
+    image: "cassowary.jpg", 
+    habitat: "Rainforests and dense woodlands"
   },
   {
-    id: 6,
-    name: 'Kookaburra',
-    group: 'Bird',
-    image: getImageUrl('Kookaburra.png'),
-    description: 'Kookaburras are terrestrial tree kingfishers native to Australia. They are known for their distinctive call which sounds like human laughter.',
-    diet: 'Carnivore'
+    name: "Kookaburra",
+    id: "kookaburra",
+    group: "birds",
+    lifespan: "20 years",
+    food: "Insects, snakes, frogs, and lizards",
+    description: "The laughing kookaburra is the largest member of the Kingfisher family and is famous for its distinctive, laughing call...",
+    length: "43 cm",
+    weight: "300 g",
+    found: "Across Australia",
+    image: "kookaburra.jpg", 
+    habitat: "Woodlands and urban areas"
   },
   {
-    id: 7,
-    name: 'Saltwater Crocodile',
-    group: 'Reptile',
-    image: getImageUrl('SaltwaterCrocodile.jpg'),
-    description: 'The saltwater crocodile is the largest of all living reptiles. Found in northern Australia, it is a powerful and aggressive predator.',
-    diet: 'Carnivore'
+    name: "Yellow Tailed Black Cockatoo",
+    id: "Yellow-tailedCockatoo",
+    group: "birds",
+    lifespan: "41 years",
+    food: "Fruit, seeds, and plant material",
+    description: "Yellow-tailed black cockatoos are large parrots with yellow cheek patches and tail panels. They are highly social and vocal birds...",
+    length: "65 cm",
+    weight: "900 g",
+    found: "South-eastern Australia",
+    image: "Yellow-tailedCockatoo.jpg",
+    habitat: "Woodlands and forests"
   },
-  {
-    id: 8,
-    name: 'Frilled-neck Lizard',
-    group: 'Reptile',
-    image: getImageUrl('Frilled-neckLizard.jpg'),
-    description: 'Frilled-neck lizards are known for the large frill around their neck, which they display when threatened. They are fast runners and can run bipedally.',
-    diet: 'Omnivore'
-  },
-  {
-    id: 9,
-    name: 'Blue-tongue Skink',
-    group: 'Reptile',
-    image: getImageUrl('Blue-tongueSkink.jpg'),
-    description: 'Blue-tongue skinks are easily recognizable by their bright blue tongues. They are friendly and commonly kept as pets in Australia.',
-    diet: 'Omnivore'
-  }
 ];
 
 export default animals;

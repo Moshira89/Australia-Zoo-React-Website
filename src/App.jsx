@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Home from "./pages/Home"
-import Mammals from "./pages/Mammals"
-import Birds from "./pages/Birds"
-import Reptiles from "./pages/Reptiles"
-import AnimalDetail from "./components/AnimalDetail"
-import Layout from "./components/Layout"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout/Layout';
+import Home from './pages/Home/Home';
+import Birds from './pages/Birds/Birds';
+import Mammals from './pages/Mammals/Mammals';
+import Reptiles from './pages/Reptiles/Reptiles';
+import AnimalDetail from './components/AnimalDetail/AnimalDetail';
 
 function App() {
   return (
@@ -12,8 +12,8 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/mammals" element={<Mammals />} />
           <Route path="/birds" element={<Birds />} />
+          <Route path="/mammals" element={<Mammals />} />
           <Route path="/reptiles" element={<Reptiles />} />
           <Route path="/animal/:id" element={<AnimalDetail />} />
         </Routes>
@@ -22,4 +22,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
