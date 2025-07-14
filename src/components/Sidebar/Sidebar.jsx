@@ -1,17 +1,20 @@
 import React from 'react';
 import styles from './sidebar.module.css';
 
-export default function Sidebar({ animalList = [], onAnimalClick, activeAnimalId }) {
+function Sidebar({ animalList = [], onAnimalClick, activeAnimalId }) {
   return (
-    <aside>
-      <ul>
+    <aside className={styles.sidebar}>
+      <ul className={styles.animalList}>
         {animalList.map((animal) => (
-          <li key={animal.id}>
+          <li
+            key={animal.id}
+            className={`${styles.animalItem} ${
+              activeAnimalId === animal.id ? styles.active : ''
+            }`}
+          >
             <button
               onClick={() => onAnimalClick(animal)}
-              style={{
-                fontWeight: activeAnimalId === animal.id ? 'bold' : 'normal',
-              }}
+              className={styles.animalButton}
             >
               {animal.name}
             </button>
@@ -21,3 +24,5 @@ export default function Sidebar({ animalList = [], onAnimalClick, activeAnimalId
     </aside>
   );
 }
+
+export default Sidebar;

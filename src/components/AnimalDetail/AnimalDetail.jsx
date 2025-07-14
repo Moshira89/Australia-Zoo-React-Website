@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './animalDetail.module.css';
+import styles from './animalDetail.module.css'; 
 import { getImageUrl } from '../../utils/getImageUrl';
 
 function AnimalDetail({ animal, onClose }) {
@@ -8,7 +8,9 @@ function AnimalDetail({ animal, onClose }) {
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
-        <button onClick={onClose} className={styles.closeBtn}>Close</button>
+        <button onClick={onClose} className={styles.closeBtn}>
+          Close
+        </button>
         <img src={getImageUrl(animal.image)} alt={animal.name} />
         <h2>{animal.name}</h2>
         <p><strong>Group:</strong> {animal.group}</p>

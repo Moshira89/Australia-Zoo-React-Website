@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './animalCard.module.css';
+import { getImageUrl } from '../../utils/getImageUrl';
 
 function AnimalCard({ animal }) {
   const shortDescription =
@@ -7,7 +8,7 @@ function AnimalCard({ animal }) {
       ? animal.description.slice(0, 200) + '...'
       : animal.description;
 
-  const imageSrc = `/images/${animal.image}`; 
+  const imageSrc = getImageUrl(animal.image);
 
   return (
     <div className={styles.card}>
