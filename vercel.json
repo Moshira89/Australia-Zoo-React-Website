@@ -1,12 +1,21 @@
 {
   "headers": [
     {
-      "source": "/assets/(.*\\.(?:jpg|jpeg|png|gif|svg|webp))",
+      "source": "/assets/(.*)\\.(js|css|jpg|jpeg|png|svg|webp|gif)",
       "headers": [
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
         },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
         {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
