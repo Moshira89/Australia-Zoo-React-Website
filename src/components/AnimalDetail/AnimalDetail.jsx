@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import animals from '../../data/animals';
-import styles from './AnimalDetail.module.css';
+import styles from './animalDetail.module.css';
 
 const AnimalDetail = ({ animal: propAnimal, onClose }) => {
   const { id } = useParams();
