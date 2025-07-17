@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Sidebar from '../../components/Sidebar/Sidebar.jsx';
 import AnimalDetail from '../../components/AnimalDetail/AnimalDetail.jsx';
 import animals from '../../data/animals.js';
+import styles from './Mammals.module.css';
 
 const Mammals = () => {
   const [activeAnimal, setActiveAnimal] = useState(null);
@@ -16,6 +17,7 @@ const Mammals = () => {
       setShowModal(false);
     } else {
       setActiveAnimal(animal);
+      setShowModal(false); 
     }
   };
 
@@ -23,30 +25,33 @@ const Mammals = () => {
   const closeDetail = () => setShowModal(false);
 
   return (
-    <div className="pageLayout">
+    <div className={styles.pageLayout}>
       <Sidebar
         animalList={mammals}
         onAnimalClick={handleAnimalClick}
         activeAnimalId={activeAnimal?.id}
       />
-      <main className="mainContent">
+      <main className={styles.mainContent}>
         {!activeAnimal ? (
           <p>Welcome to the Australia Zoo mammal exhibition site! Select an animal from the sidebar.</p>
         ) : (
-          <div>
+          <section>
             <h2>{activeAnimal.name}</h2>
             <p>{activeAnimal.description.slice(0, 200)}...</p>
             <p><strong>Food:</strong> {activeAnimal.food}</p>
             <p>
               <strong>Group:</strong>{' '}
-              <Link to={`/${activeAnimal.group.toLowerCase()}`}>
+              <Link to={`/${activeAnimal.group.toLowerCase()}`} className={styles.groupLink}>
                 {activeAnimal.group}
               </Link>
             </p>
-            <button onClick={openDetail}>Read More</button>
-          </div>
+            <button className={styles.readMoreButton} onClick={openDetail}>
+              Read More
+            </button>
+          </section>
         )}
       </main>
+
       {showModal && activeAnimal && (
         <AnimalDetail animal={activeAnimal} onClose={closeDetail} />
       )}

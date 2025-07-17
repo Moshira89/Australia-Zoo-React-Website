@@ -2,20 +2,22 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: sans-serif;
+}
+
+.layoutContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
 }
 
 .mainContent {
-  display: flex;
   flex: 1;
-  gap: 1rem;
   padding: 1rem;
-  background-color: #f9f9f9;
 }
 
 @media (max-width: 768px) {
-  .mainContent {
+  .layoutContainer {
     flex-direction: column;
-    padding: 0.5rem;
   }
 }

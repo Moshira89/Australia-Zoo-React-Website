@@ -6,9 +6,11 @@ function Layout({ children }) {
   return (
     <div className={styles.page}>
       <Header />
-      <main className={styles.mainContent}>
-        {children}
-      </main>
+      <div className={styles.layoutContainer}>
+        <main className={styles.mainContent}>
+          {children}
+        </main>
+      </div>
       <Footer />
     </div>
   );

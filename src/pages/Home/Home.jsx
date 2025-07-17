@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Sidebar from '../../components/Sidebar/Sidebar.jsx';
-import AnimalDetail from '../../components/AnimalDetail/AnimalDetail.jsx';
-import animals from '../../data/animals.js';
+import Sidebar from '../../components/Sidebar/Sidebar';
+import AnimalDetail from '../../components/AnimalDetail/AnimalDetail';
+import animals from '../../data/animals';
 
 const Home = () => {
   const [activeAnimal, setActiveAnimal] = useState(null);
@@ -11,8 +11,10 @@ const Home = () => {
   const handleAnimalClick = (animal) => {
     if (activeAnimal && activeAnimal.id === animal.id) {
       setActiveAnimal(null);
+      setShowModal(false); 
     } else {
       setActiveAnimal(animal);
+      setShowModal(false); 
     }
   };
 
@@ -26,13 +28,16 @@ const Home = () => {
         onAnimalClick={handleAnimalClick}
         activeAnimalId={activeAnimal?.id}
       />
-      <main className="mainContent">
+
+      <main className="mainContent" aria-live="polite">
         {!activeAnimal ? (
           <p>Welcome to the Australia Zoo animal exhibition site!</p>
         ) : (
-          <div>
+          <section aria-label={`Summary of ${activeAnimal.name}`}>
             <h2>{activeAnimal.name}</h2>
-            <p>{activeAnimal.description.slice(0, 200)}...</p>
+            <p>{activeAnimal.description.length > 200
+              ? activeAnimal.description.slice(0, 200) + '...'
+              : activeAnimal.description}</p>
             <p><strong>Food:</strong> {activeAnimal.food}</p>
             <p>
               <strong>Group:</strong>{' '}
@@ -41,9 +46,10 @@ const Home = () => {
               </Link>
             </p>
             <button onClick={openDetail}>Read More</button>
-          </div>
+          </section>
         )}
       </main>
+
       {showModal && activeAnimal && (
         <AnimalDetail animal={activeAnimal} onClose={closeDetail} />
       )}

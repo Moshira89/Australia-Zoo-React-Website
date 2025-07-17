@@ -1,55 +1,63 @@
-
-.mammalsPage {
+.pageLayout {
   display: flex;
-  height: 100vh;
-  background-color: #fff9f0;
-  color: #4a3c2b;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 1rem;
+  gap: 2rem;
+  min-height: 80vh;
+  background-color: #fafafa;
 }
 
-.content {
-  flex-grow: 1;
+.mainContent {
+  flex: 1;
+  background-color: white;
   padding: 1.5rem;
-  overflow-y: auto;
-  background-color: white; 
-  min-width: 0;
-}
-
-.groupMessage {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  max-width: 600px;
-}
-
-.animalSummary {
-  max-width: 600px;
-}
-
-.animalSummary h3 {
-  margin-top: 0;
-  color: #b96b27;
-}
-
-.animalImage {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
   border-radius: 8px;
-  margin: 1rem 0;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.readMoreBtn {
-  background-color: #b96b27;
+.mainContent h2 {
+  color: #0077cc;
+  margin-bottom: 0.5rem;
+}
+
+.mainContent p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.groupLink {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.groupLink:hover {
+  text-decoration: underline;
+}
+
+.readMoreButton {
+  background-color: #0077cc;
   color: white;
   border: none;
   padding: 0.6rem 1.2rem;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
 
-.readMoreBtn:hover {
-  background-color: #7d4b15;
+.readMoreButton:hover {
+  background-color: #005fa3;
+}
+
+@media (max-width: 768px) {
+  .pageLayout {
+    flex-direction: column;
+  }
+  
+  .mainContent {
+    margin-top: 1rem;
+  }
 }

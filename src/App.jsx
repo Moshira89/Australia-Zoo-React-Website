@@ -4,7 +4,7 @@ import Home from './pages/Home/Home';
 import Birds from './pages/Birds/Birds';
 import Mammals from './pages/Mammals/Mammals';
 import Reptiles from './pages/Reptiles/Reptiles';
-import AnimalDetail from './components/AnimalDetail/AnimalDetail';
+import AnimalDetail from './components/AnimalDetail/AnimalDetail'; 
 
 function App() {
   return (

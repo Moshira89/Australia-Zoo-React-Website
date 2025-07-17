@@ -1,36 +1,41 @@
 .sidebar {
+  width: 250px;
+  background-color: #f3f3f3;
   padding: 1rem;
-  background: #f0f0f0;
-  min-width: 200px;
+  border-right: 1px solid #ccc;
 }
 
 .animalList {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .animalItem {
-  padding: 0.5rem;
-  border-bottom: 1px solid #ccc;
-  transition: background-color 0.2s;
-}
-
-.animalItem:hover {
-  background-color: #e0f8e9;
-}
-
-.active {
-  background-color: #a0e8af;
-  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 .animalButton {
+  width: 100%;
   background: none;
   border: none;
-  font-size: 1rem;
-  width: 100%;
   text-align: left;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
   cursor: pointer;
-  padding: 0;
+  color: #333;
+  transition: background-color 0.2s, font-weight 0.2s;
+  border-left: 4px solid transparent;
+}
+
+.animalButton:hover,
+.animalButton:focus {
+  background-color: #e6f4ff;
+  outline: none;
+}
+
+.active .animalButton {
+  background-color: #d0ebff;
+  font-weight: bold;
+  border-left: 4px solid #0077cc;
 }

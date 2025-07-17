@@ -1,67 +1,63 @@
-
-.reptilesPage {
+.pageLayout {
   display: flex;
-  height: 100vh;
-  background-color: #f0fff4;
-  color: #2f4f2f;
-  font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 1rem;
+  gap: 2rem;
+  min-height: 80vh;
+  background-color: #f8f9fa;
 }
 
-.content {
-  flex-grow: 1;
+.mainContent {
+  flex: 1;
+  background-color: #ffffff;
   padding: 1.5rem;
-  overflow-y: auto;
-  background-color: white; 
-  min-width: 0;
-}
-
-.groupMessage {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  max-width: 600px;
-}
-
-.animalDetail {
-  max-width: 600px;
-}
-
-.animalDetail h3 {
-  margin-top: 0;
-  color: #27632a;
-}
-
-.animalImage {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
   border-radius: 8px;
-  margin: 1rem 0;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.animalDetailsList {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 1rem;
-}
-
-.animalDetailsList li {
+.mainContent h2 {
+  color: #2c3e50;
   margin-bottom: 0.5rem;
-  font-size: 1rem;
 }
 
-.readMoreBtn {
-  background-color: #27632a;
-  color: white;
+.mainContent p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.groupLink {
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.groupLink:hover {
+  text-decoration: underline;
+}
+
+.readMoreButton {
+  background-color: #2980b9;
+  color: #fff;
   border: none;
   padding: 0.6rem 1.2rem;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   font-weight: 600;
   transition: background-color 0.3s ease;
-  margin-top: 1rem;
 }
 
-.readMoreBtn:hover {
-  background-color: #1a3f17;
+.readMoreButton:hover {
+  background-color: #1c5980;
+}
+
+@media (max-width: 768px) {
+  .pageLayout {
+    flex-direction: column;
+  }
+
+  .mainContent {
+    margin-top: 1rem;
+  }
 }

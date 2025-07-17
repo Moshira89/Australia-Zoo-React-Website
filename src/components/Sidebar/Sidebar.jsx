@@ -4,23 +4,25 @@ import styles from './sidebar.module.css';
 function Sidebar({ animalList = [], onAnimalClick, activeAnimalId }) {
   return (
     <aside className={styles.sidebar}>
-      <ul className={styles.animalList}>
-        {animalList.map((animal) => (
-          <li
-            key={animal.id}
-            className={`${styles.animalItem} ${
-              activeAnimalId === animal.id ? styles.active : ''
-            }`}
-          >
-            <button
-              onClick={() => onAnimalClick(animal)}
-              className={styles.animalButton}
+      <nav aria-label="Animal list">
+        <ul className={styles.animalList}>
+          {animalList.map((animal) => (
+            <li
+              key={animal.id}
+              className={`${styles.animalItem} ${
+                activeAnimalId === animal.id ? styles.active : ''
+              }`}
             >
-              {animal.name}
-            </button>
-          </li>
-        ))}
-      </ul>
+              <button
+                onClick={() => onAnimalClick(animal)}
+                className={styles.animalButton}
+              >
+                {animal.name}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </aside>
   );
 }

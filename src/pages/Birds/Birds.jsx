@@ -16,6 +16,7 @@ const Birds = () => {
       setShowModal(false);
     } else {
       setActiveAnimal(animal);
+      setShowModal(false); 
     }
   };
 
@@ -29,6 +30,7 @@ const Birds = () => {
         onAnimalClick={handleAnimalClick}
         activeAnimalId={activeAnimal?.id}
       />
+
       <main className="mainContent">
         {!activeAnimal ? (
           <p>Welcome to the Australia Zoo bird exhibition site! Select an animal from the sidebar.</p>
@@ -47,6 +49,7 @@ const Birds = () => {
           </div>
         )}
       </main>
+
       {showModal && activeAnimal && (
         <AnimalDetail animal={activeAnimal} onClose={closeDetail} />
       )}

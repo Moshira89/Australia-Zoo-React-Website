@@ -1,16 +1,21 @@
-#  Australia Zoo Website
+# Australia Zoo Website
 
-A multi-page React website for the Australia Zoo exhibition.
+A React + Vite project showcasing Australian animals.  
+Deployed on Vercel: [Live Site](https://your-app-name.vercel.app)
 
 ## Features
+- Animal cards with detailed pages
+- Filtering by type (Birds, Mammals, Reptiles)
+- Responsive layout with sidebar navigation
 
-- 4 routed pages: Home, Mammals, Birds, Reptiles
-- Reusable Sidebar component
-- Animal details via modal (or dynamic route)
-- CSS Modules for styling
-- External data in `/data/animals.js`
-- Responsive layout with header, sidebar, main, and footer
-- Built with Vite + React Router
+## Tech Stack
+- React + Vite
+- React Router
+- CSS Modules
+- Hosted on Vercel
 
-## File Structure
+## Development
 
+```bash
+npm install
+npm run dev

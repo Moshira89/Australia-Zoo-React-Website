@@ -1,20 +1,17 @@
 const imageMap = {
-  'echidna.jpg': new URL('../assets/images/Echidna.jpg', import.meta.url).href,
-  'TasmanianDevil.jpg': new URL('../assets/images/TasmanianDevil.jpg', import.meta.url).href,
-  'quokka.jpg': new URL('../assets/images/quokka.jpg', import.meta.url).href,
-  'frill-neckedLizard.jpg': new URL('../assets/images/frill-neckedLizard.jpg', import.meta.url).href,
-  'hawksbill-turtle.jpg': new URL('../assets/images/Hawksbill-Turtle.jpg', import.meta.url).href,
-  'Perentie.jpg': new URL('../assets/images/Perentie.jpg', import.meta.url).href,
-  'cassowary.jpg': new URL('../assets/images/Cassowary.jpg', import.meta.url).href,
-  'kookaburra.jpg': new URL('../assets/images/Kookaburra.jpg', import.meta.url).href,
-  'Yellow-tailedCockatoo.jpg': new URL('../assets/images/Yellow-tailedCockatoo.jpg', import.meta.url).href, // FIXED
-  'placeholder.jpg': new URL('../assets/images/placeholder.jpg', import.meta.url).href
+  'echidna.jpg': '/images/Echidna.jpg',
+  'tasmanian-devil.jpg': '/images/TasmanianDevil.jpg',
+  'quokka.jpg': '/images/quokka.jpg',
+  'frill-neckedlizard.jpg': '/images/frill-neckedLizard.jpg',
+  'hawksbill-turtle.jpg': '/images/Hawksbill-Turtle.jpg',
+  'perentie.jpg': '/images/Perentie.jpg',
+  'cassowary.jpg': '/images/Cassowary.jpg',
+  'kookaburra.jpg': '/images/Kookaburra.jpg',
+  'yellow-tailed-black-cockatoo.jpg': '/images/Yellow-tailed-Black-Cockatoo.jpg',
 };
 
-export function getImageUrl(imageName) {
-  if (imageMap[imageName]) {
-    return imageMap[imageName];
-  }
-  console.error(`Image "${imageName}" not found, using placeholder`);
-  return imageMap['placeholder.jpg'];
+export function getImageUrl(animalImageName) {
+  if (!animalImageName) return '';
+  const key = animalImageName.toLowerCase();
+  return imageMap[key] || '';
 }
