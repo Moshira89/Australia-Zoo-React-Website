@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Sidebar from '../../components/Sidebar/Sidebar.jsx';
 import AnimalDetail from '../../components/AnimalDetail/AnimalDetail.jsx';
 import animals from '../../data/animals.js';
-import styles from './Reptiles.module.css';
+import styles from './reptiles.module.css';
 
 const Reptiles = () => {
   const [activeAnimal, setActiveAnimal] = useState(null);
