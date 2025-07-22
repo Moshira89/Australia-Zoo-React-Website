@@ -11,7 +11,7 @@ const AnimalDetail = ({ animal: propAnimal, onClose }) => {
 
   useEffect(() => {
     if (!propAnimal && id) {
-      const foundAnimal = animals.find((a) => a.id === parseInt(id));
+      const foundAnimal = animals.find((a) => a.id === parseInt(id)); 
       setAnimal(foundAnimal);
     }
   }, [id, propAnimal]);
@@ -32,14 +32,22 @@ const AnimalDetail = ({ animal: propAnimal, onClose }) => {
       <section className={styles.modalContent}>
         <header className={styles.modalHeader}>
           <h2>{animal.name}</h2>
-          {onClose ? (
-            <button className={styles.closeButton} onClick={onClose}>Close</button>
-          ) : (
-            <button className={styles.closeButton} onClick={() => navigate(-1)}>Back</button>
-          )}
         </header>
+        {onClose ? (
+          <button className={styles.closeButton} onClick={onClose}>Close</button>
+        ) : (
+          <button className={styles.closeButton} onClick={() => navigate(-1)}>Back</button>
+        )}
         <figure>
-          <img src={`/images/${animal.image}`} alt={animal.name} className={styles.animalImage} />
+          <img
+            src={`/images/${animal.image}`}
+            alt={animal.name}
+            className={styles.animalImage}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = '/images/fallback.jpg'; 
+            }}
+          />
         </figure>
         <p>{animal.description}</p>
         <ul>

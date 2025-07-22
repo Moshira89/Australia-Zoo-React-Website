@@ -7,7 +7,7 @@ const imageMap = {
   'perentie.jpg': '/images/Perentie.jpg',
   'cassowary.jpg': '/images/Cassowary.jpg',
   'kookaburra.jpg': '/images/Kookaburra.jpg',
-  'yellow-tailed-black-cockatoo.jpg': '/images/Yellow-tailed-Black-Cockatoo.jpg',
+  'yellow-tailedCockatoo.jpg': '/images/Yellow-tailedCockatoo.jpg',
 };
 
 export function getImageUrl(animalImageName) {

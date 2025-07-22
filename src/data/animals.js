@@ -105,7 +105,7 @@ const animals = [
     length: '65 cm',
     weight: '900 grams',
     found: 'South Australia, Victoria, Queensland and Tasmania',
-    image: 'Yellow-tailed-Black-Cockatoo.jpg'
+    image: 'Yellow-tailedCockatoo.jpg'
   }
 ];
 
